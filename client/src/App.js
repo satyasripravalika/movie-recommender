@@ -12,7 +12,7 @@ function App() {
 
   // Fetch all movies on load
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/movies`)
+   axios.get(`${process.env.REACT_APP_API_URL}/api/movies/recommendations/${userId}`)
       .then(res => {
         setMovies(res.data);
         setLoading(false);
