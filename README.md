@@ -100,7 +100,6 @@ RETURN DISTINCT rec.title AS title, a.name AS actor
 
 ## Demo
 
-- Hosted demo:   https://movie-recommender-zacv.vercel.app
+- Hosted demo: https://movie-recommender-zacv.vercel.app
 
-- Screen recording: (add link)
-
+- Screen recording: https://drive.google.com/drive/u/0/folders/1UcaDqkrpF9mskT7_YchJ21nW_sFITwnt
