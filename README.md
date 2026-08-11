@@ -96,7 +96,9 @@ RETURN DISTINCT rec.title AS title, a.name AS actor
 
 ## Screenshots
 
-(Add screenshots of the UI here — "Recommended For You" and "All Movies" sections)
+[user1 ] (./screenshots/user1.jpeg)
+[ user2] (./screenshots/user2.jpeg)
+[user3] (./screenshots/user3.jpeg)
 
 ## Demo
 
