@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const API_BASE = process.env.REACT_APP_API_URL || 'https://movie-recommender-5n8g.onrender.com';
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
@@ -10,9 +12,8 @@ function App() {
   const [recLoading, setRecLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch all movies on load
   useEffect(() => {
-   axios.get(`${process.env.REACT_APP_API_URL}/api/movies/recommendations/${userId}`)
+    axios.get(`${API_BASE}/api/movies`)
       .then(res => {
         setMovies(res.data);
         setLoading(false);
@@ -23,11 +24,10 @@ function App() {
       });
   }, []);
 
-  // Fetch recommendations when user changes
   const getRecommendations = (userId) => {
     setSelectedUser(userId);
     setRecLoading(true);
-    axios.get(`http://localhost:5000/api/movies/recommendations/${userId}`)
+    axios.get(`${API_BASE}/api/movies/recommendations/${userId}`)
       .then(res => {
         setRecommendations(res.data);
         setRecLoading(false);
@@ -84,7 +84,6 @@ function App() {
             {recommendations.map((rec, idx) => (
               <div className="movie-card rec-card" key={idx}>
                 <h3>{rec.title}</h3>
-                <span className="genre-tag">{rec.genre}</span>
               </div>
             ))}
           </div>
